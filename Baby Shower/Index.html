@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Invitación Baby Shower</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- FONDO ANIMADO -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- GATE: SOBRE INICIAL -->
+  <section class="gate" id="gate" aria-label="Abrir invitación">
+    <div class="gate-card">
+      <div class="gate-title">
+        <h2>Baby Shower</h2>
+        <h1>Carolina</h1>
+        <p>Toca el sobre para abrir la invitación</p>
+      </div>
+
+      <div class="envelope envelope--gate" id="gateEnvelope" role="button" tabindex="0" aria-label="Abrir sobre">
+        <div class="envelope__back"></div>
+        <div class="envelope__letter">
+          <h3>¡Te esperamos!</h3>
+          <p>Viernes 28 de Noviembre, 2025 · 3:00–8:00 pm</p>
+          <p>Salón Plata, Eulalio Gutiérrez #</p>
+        </div>
+        <div class="envelope__flap"></div>
+        <div class="envelope__front"></div>
+      </div>
+
+      <div class="gate-actions">
+        <button class="btn-theme open-envelope" type="button" id="openGateBtn">✉️ Abrir invitación</button>
+      </div>
+
+      <div class="confetti" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- INVITACIÓN COMPLETA (oculta hasta abrir el sobre) -->
+  <div class="invitation-wrapper is-hidden" id="invite">
+    <div class="invitation" role="region" aria-label="Invitación Baby Shower">
+      <div class="content">
+        <!-- ENCABEZADO -->
+        <div class="header">
+          <h2>Baby Shower</h2>
+          <h1>Bienvenida, bebé Carolina 🌠</h1>
+          <p>Una tarde entre nubes, ositos y abrazos.</p>
+
+          <!-- COUNTDOWN -->
+          <div class="countdown-pill" aria-live="polite">
+            ⏳ Falta: <span id="countdown">calculando...</span>
+          </div>
+        </div>
+
+        <!-- BLOQUE DE IMÁGENES -->
+        <div class="images-block">
+          <!-- HERO PRINCIPAL -->
+          <div class="image-row hero">
+            <div class="hero-slot">
+              <img class="hero-img" src="img/Ositos 3.jpg" alt="Ilustración principal del baby shower" loading="eager" decoding="async" />
+              <div class="hero-vignette"></div>
+            </div>
+          </div>
+
+          <!-- PILLS: REGALOS O SOBRES -->
+          <div class="info-pills" role="note" aria-label="Indicaciones para regalos">
+            <span class="pill pill-emoji">🧸</span>
+            <span class="pill pill-text">Bienvenidos: Regalitos o Sobres</span>
+            <span class="pill pill-emoji">✨</span>
+          </div>
+        </div>
+
+        <!-- DETALLES DEL EVENTO -->
+        <div class="details" aria-label="Detalles del evento">
+          <div class="details-row"><span class="label">Fecha</span><span>Viernes, 28 de Noviembre, 2025</span></div>
+          <div class="details-row"><span class="label">Hora</span><span>3:00 PM - 8:00 PM</span></div>
+          <div class="details-row"><span class="label">Lugar</span><span>Salón Plata, Eulalio Gutiérrez #</span></div>
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="actions">
+          <a class="btn-theme" href="https://wa.me/528147069229?text=Confirmo%20asistencia%20al%20Baby%20Shower%20de%20Carolina" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
+            💗 Confirmar asistencia
+          </a>
+          <a class="btn-theme secondary" href="https://maps.google.com/?q=Sal%C3%B3n%20Plata%20Eulalio%20Gutierrez" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps">
+            📍 Ver ubicación
+          </a>
+        </div>
+
+        <div class="footer-note">
+          <strong>Dress code:</strong> colores pastel & vibes de nube esponjosa.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/bg.js?v=7" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+</body>
+</html>
