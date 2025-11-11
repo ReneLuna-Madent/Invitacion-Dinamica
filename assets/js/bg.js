@@ -114,21 +114,19 @@
   // ===== Auto-escala por rendimiento (simple)
   let last = performance.now(), frameCount = 0, lastFpsCheck = last;
   function loop(now) {
-    const dt = Math.min(0.05, (now - last) / 1000); // dt no usado, pero útil si expandes
+    const dt = Math.min(0.05, (now - last) / 1000); // dt no usado pero dejémoslo
     last = now;
 
     drawBG();
     drawStars();
     if (!reduce) drawMeteors();
 
-    // cada 2s revisa FPS y baja calidad si hace falta
+    // cada 2s revisa FPS y baja densidad de estrellas si hace falta
     frameCount++;
     if (now - lastFpsCheck > 2000) {
       const fps = (frameCount * 1000) / (now - lastFpsCheck);
       frameCount = 0; lastFpsCheck = now;
-      if (fps < 45 && QUALITY > 0.75) {        // baja densidad de estrellas
-        QUALITY = 0.75; initStars();
-      }
+      if (fps < 45 && QUALITY > 0.75) { QUALITY = 0.75; initStars(); }
     }
 
     requestAnimationFrame(loop);

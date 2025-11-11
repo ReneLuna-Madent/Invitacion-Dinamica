@@ -89,7 +89,7 @@ canvas#bgCanvas{
   100%{ transform:translateY(0%); opacity:1 }
 }
 
-/* Confeti para gate */
+/* Confeti (usado en gate) */
 .confetti{ position:absolute; inset:0; overflow:hidden; pointer-events:none }
 .confetti i{
   position:absolute; width:8px; height:14px; border-radius:2px;
@@ -173,6 +173,25 @@ canvas#bgCanvas{
   mix-blend-mode:multiply; border-radius:22px;
 }
 
+/* Botón de audio dentro del hero */
+.hero-slot{ position: relative; }
+.hero-audio-toggle{
+  position: absolute;
+  top: 10px; right: 10px;
+  z-index: 5;
+  width: 42px; height: 42px;
+  border: none; border-radius: 50%;
+  display: grid; place-items: center;
+  cursor: pointer;
+  background: linear-gradient(135deg,#ffe0f8,#dff7ff);
+  color: #4b3b87; font-size: 20px;
+  box-shadow: 0 8px 20px rgba(80,60,140,.28), inset 0 1px 0 rgba(255,255,255,.8);
+  transition: transform .15s ease, box-shadow .15s ease, background .3s;
+}
+.hero-audio-toggle:hover{ transform: translateY(-1px); box-shadow: 0 12px 26px rgba(80,60,140,.35); }
+.hero-audio-toggle[aria-pressed="true"]{ background: linear-gradient(135deg,#c9ffe9,#e3f5ff); }
+.hero-audio-toggle:focus-visible{ outline: 3px solid #a98dff; outline-offset: 2px; }
+
 /* Pills Regalos/Sobres */
 .info-pills{
   display:flex; gap:8px; justify-content:center; align-items:center;
@@ -226,3 +245,8 @@ canvas#bgCanvas{
   .info-pills{ max-width:calc(100% - 24px) }
 }
 
+/* Respeto a usuarios que prefieren menos animación */
+@media (prefers-reduced-motion: reduce){
+  .envelope.open .envelope__flap,
+  .envelope.open .envelope__letter{ animation:none }
+}
