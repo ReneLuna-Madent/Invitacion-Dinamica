@@ -250,3 +250,65 @@ canvas#bgCanvas{
   .envelope.open .envelope__flap,
   .envelope.open .envelope__letter{ animation:none }
 }
+/* ===== Crédito de desarrollo (versión sutil/compacta) ===== */
+.brand-credit{
+  margin: 8px auto 0;
+  padding: 4px 8px;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+
+  /* Fondo casi imperceptible */
+  background: linear-gradient(90deg, #faf6ffb3, #f2faffb3);
+  border: 1px solid #efe9ff;
+  box-shadow: 0 2px 8px rgba(140,106,193,.10);
+  backdrop-filter: blur(1px);
+
+  /* Más discreto por defecto; revive al hover/focus */
+  opacity: .65;
+  transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.brand-credit:hover,
+.brand-credit:focus-within{
+  opacity: 1;
+  box-shadow: 0 4px 14px rgba(140,106,193,.12);
+  transform: translateY(-1px);
+}
+
+.brand-credit-label{
+  font-size: 0.72rem;          /* más pequeño */
+  font-weight: 600;
+  color: #7266b6;               /* tono tenue */
+  letter-spacing: .01em;
+}
+
+.brand-link{
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  border-radius: 8px;
+  transition: transform .15s ease, filter .2s ease, opacity .2s ease;
+}
+
+.brand-logo{
+  height: 16px;                 /* más pequeño */
+  width: auto;
+  opacity: .9;                  /* baja presencia */
+  filter: drop-shadow(0 0.5px 0 rgba(255,255,255,.6));
+}
+
+/* ligero realce sólo al pasar el cursor por el logo */
+.brand-link:hover .brand-logo,
+.brand-link:focus-visible .brand-logo{
+  opacity: 1;
+  transform: translateY(-0.5px);
+}
+
+@media (max-width: 480px){
+  .brand-credit{ margin-top: 6px; padding: 3px 7px; gap: 5px; }
+  .brand-credit-label{ font-size: 0.68rem; }
+  .brand-logo{ height: 15px; }
+}

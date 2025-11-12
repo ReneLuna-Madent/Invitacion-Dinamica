@@ -61,7 +61,8 @@
           <!-- HERO PRINCIPAL -->
           <div class="image-row hero">
             <div class="hero-slot">
-              <img class="hero-img" src="img/Ositos 3.jpg" alt="Ilustración principal del baby shower" loading="eager" decoding="async" />
+              <!-- OJO: sin espacios en el nombre del archivo -->
+              <img class="hero-img" src="img/Ositos-3.jpg" alt="Ilustración principal del baby shower" loading="eager" decoding="async" />
               <!-- Botón de audio dentro del hero -->
               <button class="hero-audio-toggle" id="audioToggleHero" type="button" aria-pressed="false" aria-label="Reproducir música">
                 🎵
@@ -90,17 +91,30 @@
           <a class="btn-theme" href="https://wa.me/528147069229?text=Confirmo%20asistencia%20al%20Baby%20Shower%20de%20Carolina" target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">
             💗 Confirmar asistencia
           </a>
-          <a class="btn-theme secondary" href="https://maps.google.com/?q=Sal%C3%B3n%20Plata%20Eulalio%20Gutierrez" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps">
+          <a class="btn-theme secondary" href="https://maps.app.goo.gl/QUc7S3BCBFqNiq7P8" target="_blank" rel="noopener" aria-label="Ver ubicación en Google Maps">
             📍 Ver ubicación
           </a>
         </div>
 
-        <div class="footer-note">
-          <strong>Dress code:</strong> colores pastel & vibes de nube esponjosa.
-        </div>
-      </div>
-    </div>
-  </div>
+        <!-- CRÉDITO / BRAND (sutil) -->
+        <footer class="brand-credit" aria-label="Crédito de desarrollo">
+          <span class="brand-credit-label">Desarrollado por</span>
+          <a class="brand-link" href="#" target="_blank" rel="noopener">
+            <img
+              class="brand-logo"
+              src="assets/img/logo.png"
+              alt="Nombre de tu empresa"
+              width="140"
+              height="36"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </footer>
+
+      </div> <!-- .content -->
+    </div>   <!-- .invitation -->
+  </div>     <!-- .invitation-wrapper -->
 
   <!-- AUDIO (inicia solo después de abrir el sobre) -->
   <audio id="bgMusic" preload="metadata" loop crossorigin="anonymous">
